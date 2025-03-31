@@ -1,0 +1,11 @@
+{
+    "go.lintTool": "revive",
+    "go.lintFlags": [
+        "--exclude",
+        "*_test.go"
+    ],
+    "gopls": {
+        "formatting.gofumpt": true,
+        "formatting.local": "github.com/jkaveri/goconfig"
+    }
+}
