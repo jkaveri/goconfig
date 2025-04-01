@@ -8,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-var _ encoding.TextUnmarshaler = (*YAMLFile[interface{}])(nil)
+var _ encoding.TextUnmarshaler = (*YAMLFile[any])(nil)
 
 // YAMLFile represents a configuration file in YAML format.
 // It implements encoding.TextUnmarshaler to allow loading from environment variables.

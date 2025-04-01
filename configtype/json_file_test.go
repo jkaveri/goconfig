@@ -137,9 +137,9 @@ func TestJSONFileImplementation(t *testing.T) {
 		}
 
 		// Test invalid JSON
-		invalidJsonContent := `{"name": "test", "version": invalid}`
+		invalidJSONContent := `{"name": "test", "version": invalid}`
 		filePath := filepath.Join(tmpDir, "invalid_config.json")
-		if err := os.WriteFile(filePath, []byte(invalidJsonContent), 0o644); err != nil {
+		if err := os.WriteFile(filePath, []byte(invalidJSONContent), 0o644); err != nil {
 			t.Fatalf("Failed to create test file: %v", err)
 		}
 

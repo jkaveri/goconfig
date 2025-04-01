@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-var _ encoding.TextUnmarshaler = (*TOMLFile[interface{}])(nil)
+var _ encoding.TextUnmarshaler = (*TOMLFile[any])(nil)
 
 // TOMLFile represents a configuration file in TOML format.
 // It implements encoding.TextUnmarshaler to allow loading from environment variables.

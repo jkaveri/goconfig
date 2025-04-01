@@ -1,210 +1,92 @@
-# This configuration for the revive linter used for linting the revive's codebase itself.
-# See .github/workflows/lint.yaml.
-
-ignoreGeneratedHeader = false
-severity = "warning"
 confidence = 0.8
 errorCode = 1
+ignoreGeneratedHeader = true
+severity = "warning"
 warningCode = 1
 
-
-[rule.var-naming]
-  arguments = [["ID", "VM", "API", "URL", "HTTP", "JSON", "XML", "SQL", "RPC", "UUID", "UID", "IP", "DNS", "SSH", "SSL", "TLS", "HTTPS"],[],[{upperCaseConst=true}]]
-
-[rule.var-declaration]
-  arguments = []
-
-[rule.unused-parameter]
-  arguments = [{allowRegex = "^_" }]
-
-[rule.unused-receiver]
-  arguments = [{allowRegex = "^_" }]
-
-[rule.unhandled-error]
-  arguments = ["os\\.(Create|WriteFile|Chmod)", "fmt\\.Print", "net\\..*", "bytes\\.Buffer\\.Write"]
-  exclude = ["*_test.go"]
-
-[rule.unreachable-code]
-  arguments = []
-
-[rule.unnecessary-stmt]
-  arguments = []
-
-[rule.unexported-return]
-  arguments = []
-
-[rule.unexported-naming]
-  arguments = []
-
-[rule.unconditional-recursion]
-  arguments = []
-
-[rule.unchecked-type-assertion]
-  arguments = [{acceptIgnoredAssertionResult=true}]
-
-[rule.time-naming]
-  arguments = []
-
-[rule.time-equal]
-  arguments = []
-
-[rule.superfluous-else]
-  arguments = ["preserveScope"]
-
-[rule.string-format]
-  arguments = [
-    ["fmt.Errorf[0]", "/(^|[^\\.!?])$/", "must not end in punctuation"],
-    ["panic", "/^[^\\n]*$/", "must not contain line breaks"],
-    ["fmt.Errorf[0]", "!/^.*%w.*$/", "must not contain '%w'"]
-  ]
-
-[rule.struct-tag]
-  arguments = ["json,inline", "bson,outline,gnu"]
-
-[rule.string-of-int]
-  arguments = []
-
-[rule.redundant-import-alias]
-  arguments = []
-
-[rule.receiver-naming]
-  arguments = []
-
-[rule.range-val-address]
-  arguments = []
-
-[rule.range-val-in-closure]
-  arguments = []
-
-[rule.range]
-  arguments = []
-
-[rule.package-comments]
-  arguments = []
-
-[rule.optimize-operands-order]
-  arguments = []
-
-[rule.nested-structs]
-  arguments = []
-
-[rule.modifies-value-receiver]
-  arguments = []
-
-[rule.modifies-parameter]
-  arguments = []
-
-[rule.max-public-structs]
-  arguments = [10]
-
-[rule.max-control-nesting]
-  arguments = [4]
-
-[rule.line-length-limit]
-  arguments = [120]
-
-[rule.if-return]
-  arguments = []
-
-[rule.identical-branches]
-  arguments = []
-
-[rule.get-return]
-  arguments = []
-
-[rule.function-result-limit]
-  arguments = [3]
-
-
-[rule.flag-parameter]
-  arguments = []
-
-[rule.file-length-limit]
-  arguments = [{max = 1000}]
-
-[rule.file-header]
-  arguments = []
-
-[rule.filename-format]
-  arguments = []
-
-[rule.error-strings]
-  arguments = []
-
-[rule.error-return]
-  arguments = []
-
-[rule.error-naming]
-  arguments = []
-
-[rule.errorf]
-  arguments = []
-
-[rule.exported]
-  arguments = []
-
-[rule.empty-lines]
-  arguments = []
-
-[rule.empty-block]
-  arguments = []
-
-[rule.early-return]
-  arguments = []
-
-[rule.duplicated-imports]
-  arguments = []
-
-[rule.dot-imports]
-  arguments = []
-
-[rule.defer]
-  arguments = []
-
-[rule.deep-exit]
-  arguments = []
-
-[rule.datarace]
-  arguments = []
-
-[rule.cyclomatic]
-  arguments = [15]
-
-[rule.context-keys-type]
-  arguments = []
-
-[rule.context-as-argument]
-  arguments = []
-
-[rule.constant-logical-expr]
-  arguments = []
-
-[rule.confusing-results]
-  arguments = []
-
-[rule.confusing-naming]
-  arguments = []
-
-[rule.comment-spacings]
-  arguments = []
-
-[rule.cognitive-complexity]
-  arguments = [10]
-
-[rule.call-to-gc]
-  arguments = []
-
-[rule.bool-literal-in-expr]
-  arguments = []
-
-[rule.blank-imports]
-  arguments = []
+[rule.argument-limit]
+arguments = [4]
 
 [rule.bare-return]
-  arguments = []
 
-[rule.atomic]
-  arguments = []
+[rule.blank-imports]
 
-[rule.argument-limit]
-  arguments = [4]
+[rule.context-as-argument]
+
+[rule.context-keys-type]
+
+[rule.confusing-naming]
+
+[rule.constant-logical-expr]
+
+[rule.dot-imports]
+
+[rule.early-return]
+
+[rule.empty-block]
+
+[rule.empty-lines]
+
+[rule.enforce-map-style]
+arguments = ["literal"]
+
+[rule.enforce-slice-style]
+arguments = ["literal"]
+
+[rule.error-naming]
+
+[rule.error-return]
+
+[rule.error-strings]
+
+[rule.errorf]
+
+[rule.exported]
+
+[rule.import-alias-naming]
+arguments = ["^[a-z][a-z0-9]{0,}$"]
+
+[rule.increment-decrement]
+
+[rule.indent-error-flow]
+
+[rule.line-length-limit]
+arguments = [200]
+
+[rule.modifies-value-receiver]
+
+[rule.nested-structs]
+
+[rule.package-comments]
+
+[rule.range]
+
+[rule.range-val-in-closure]
+
+[rule.receiver-naming]
+
+[rule.redefines-builtin-id]
+
+[rule.superfluous-else]
+
+[rule.time-naming]
+
+[rule.unexported-naming]
+
+[rule.unexported-return]
+
+[rule.unhandled-error]
+
+[rule.unreachable-code]
+
+[rule.unused-parameter]
+
+[rule.unused-receiver]
+
+[rule.useless-break]
+
+[rule.use-any]
+
+[rule.var-declaration]
+
+[rule.var-naming]

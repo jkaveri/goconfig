@@ -150,7 +150,7 @@ func TestArraySeparator(t *testing.T) {
 func TestErrorHandling(t *testing.T) {
 	tests := []struct {
 		name    string
-		config  interface{}
+		config  any
 		env     map[string]string
 		wantErr bool
 	}{

@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-var _ encoding.TextUnmarshaler = (*JSONFile[interface{}])(nil)
+var _ encoding.TextUnmarshaler = (*JSONFile[any])(nil)
 
 // JSONFile represents a configuration file in JSON format.
 // It implements encoding.TextUnmarshaler to allow loading from environment variables.

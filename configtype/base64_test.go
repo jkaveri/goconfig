@@ -60,9 +60,3 @@ func TestBase64(t *testing.T) {
 		})
 	}
 }
-
-func TestBase64Reload(t *testing.T) {
-	var b Base64
-	err := b.Reload()
-	assert.NoError(t, err) // Reload should always return nil
-}

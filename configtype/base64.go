@@ -49,9 +49,3 @@ func (b *Base64) UnmarshalText(data []byte) error {
 	*b = Base64(decoded)
 	return nil
 }
-
-// Reload reloads the base64 configuration.
-// This is useful when the configuration has been updated and you want to load the new values.
-func (b *Base64) Reload() error {
-	return nil // Base64 configuration is loaded once during UnmarshalText
-}

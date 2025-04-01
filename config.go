@@ -22,7 +22,7 @@ const (
 // Load loads configuration from environment variables into the provided struct.
 // It uses default options and is a convenience wrapper around New().Load().
 // The struct should be a pointer to a struct with fields tagged with "env" or "alias" tags.
-func Load(s interface{}, options ...Option) error {
+func Load(s any, options ...Option) error {
 	c := New(options...)
 	return c.Load(s)
 }
@@ -56,13 +56,13 @@ type Loader struct {
 // Load loads environment variables into the provided struct.
 // The struct should be a pointer to a struct with fields tagged with "env" or "alias" tags.
 // Returns an error if the loading process fails.
-func (c *Loader) Load(s interface{}) error {
+func (c *Loader) Load(s any) error {
 	_, err := c.recursiveLoadToStruct(s, nil)
 	return err
 }
 
 // nolint:gocyclo
-func (c *Loader) recursiveLoadToStruct(s interface{}, prefix []string) (found bool, err error) {
+func (c *Loader) recursiveLoadToStruct(s any, prefix []string) (found bool, err error) {
 	vPtr := reflect.ValueOf(s)
 
 	if vPtr.Kind() != reflect.Ptr {
@@ -176,7 +176,7 @@ func (c *Loader) getFieldName(tf reflect.StructField) (name string, exactly bool
 
 func (c *Loader) buildEnvKey(tf reflect.StructField, parentKeys []string) (string, []string) {
 	joinKeys := func(names ...string) string {
-		arr := make([]string, 0)
+		arr := []string{}
 
 		if c.prefix != "" {
 			arr = append(arr, c.prefix)
